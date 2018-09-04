@@ -1,0 +1,87 @@
+*{padding:0;margin: 0;}
+body{
+    -moz-user-select: none;/*FireFox不能选中文字*/
+    background-color: #ffffff;
+    color: #555;
+    font-family:'Avenir Next','Lantinghei SC';
+    font-size: 14px;
+    -webkit-font-smoothing:antialiased;
+}
+@font-face{
+    font-family:'icons';
+    src: url(img/icons.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.wrap{
+    width: 100%;
+    height: 600px;
+    background-color: #333 ;
+    position: absolute;
+    top:50%;
+    margin-top: -300px;
+    overflow: hidden;
+    background:url(img/background.jpg);
+    -webkit-perspective: 800px;
+}
+/*海报样式*/
+.photo{
+    width: 260px;
+    height: 320px;
+    position: absolute;
+    z-index:2;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
+    cursor:pointer;
+    transition: all .6s ease-in-out;
+    left: 50%;
+    top:50%;
+    margin-top:-160px;
+    margin-left: -130px;
+}
+.photo .side{
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.photo .side-front .image{
+    width: 100%;
+    height: 250px;
+    line-height: 250px;
+    overflow: hidden;
+}
+.photo .side-front .image img{
+     width: 100%;
+ }
+.photo .side-front .caption{
+     text-align: center;
+     font-size: 16px;
+     line-height: 50px;
+ }
+.side-back .desc{
+     color: #666;
+     font-size:14px;
+     line-height: 1.5;
+ }
+ .photo-wrap{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     -webkit-transform-style: preserve-3d;
+ }
+ .photo-wrap .side-front{
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
+.photo-wrap .side-back{
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+}
+.photo-wrap .side{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
